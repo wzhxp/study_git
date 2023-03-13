@@ -8,4 +8,6 @@
   - git add . 所有文件
 - 生成版本git commit -m '描述信息'：**本地管理空间**
   - 查看版本记录 git log
+  - 回滚之前版本:git log； git reset --hard 版本号
+  - 回滚之后版本：git reflog；git reset --hard 版本号
 - 
