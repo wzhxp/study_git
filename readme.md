@@ -121,3 +121,48 @@ git config --global user.name "Your Name"
   
 
   
+
+## 六、Tags使用
+
+### 1. Tags理解
+
+> tag 中文我们可以称它为 标签。
+>
+> 简单的理解，tag 就是 对某次 commit 的一个标识，相当于起了一个别名。
+> 例如，在项目发布某个版本的时候，针对最后一次commit 起一个 v1.0.100 这样的标签来标识里程碑的意义。
+
+### 2. Tags的类型
+
+> 有两种类型的标签 ： 轻量标签（lightweight）、附注标签(annotated)
+>
+> 【轻量标签 】： 只是某个commit 的引用，可以理解为是一个commit的别名；
+>
+> 【附注标签】 ：是存储在git仓库中的一个完整对象，包含打标签者的名字、电子邮件地址、日期时间 以及其他的标签信息。它是可以被校验的，可以使用 GNU Privacy Guard (GPG) 签名并验证。
+
+### 3. 常用操作
+
+```
+# 查看现有标签
+git tag
+git tag -l         注：使用该方式进行列出，可以用*代替未知字符
+
+# 创建标签
+git tag 标签名
+git tag 标签名 提交版本
+
+# 创建附注标签
+git tag -a 标签名 -m 附注信息
+git tag -a 标签名 提交版本号 -m 附注信息
+
+# 删除标签
+git tag -d 标签名
+
+# 推送到远程仓库
+git push origin(仓库别名) 标签名      注：这是上传单个标签
+git push origin(仓库别名) --tags      注：这是上传所有标签
+
+# 删除远程仓库的标签
+$ git push origin  :regs/tags/标签名
+$ git push origin --delete 标签名
+```
+
