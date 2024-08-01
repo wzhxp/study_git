@@ -35,6 +35,12 @@ git merge 要合并的分支
 
 # 删除分支
 git branch -d 分支名称
+
+# 变基（合并分支的一种）
+# 将主题分支<topicbranch>变基到目标分支<basebranch>上。
+# 即提取在<topicbranch>上的补丁和修改，然后在<basebranch>的基础上应用一次。
+$ git rebase <basebranch> <topicbranch>
+解释：变基的原理是首先找到这两个分支（即当前分支、变基操作的目标基底）的最近共同祖先，然后对比当前分支相对于该祖先的历次提交，提取相应的修改并存为临时文件， 然后将当前分支指向目标基底, 最后以此将之前另存为临时文件的修改依序应用。
 ```
 
 
@@ -166,3 +172,48 @@ $ git push origin  :regs/tags/标签名
 $ git push origin --delete 标签名
 ```
 
+
+
+## 七、拉取分支
+
+### 方案一：从特定分支拉取
+
+Git Pull命令用于从远程仓库拉取代码并合并到本地分支。
+
+首先，切换到要拉取代码的目标分支：
+
+```bash
+git checkout dev
+```
+
+然后，使用Git Pull命令从`origin`远程仓库的`dev`分支拉取代码：
+
+```bash
+git pull origin dev
+```
+
+这将从`origin`远程仓库的`dev`分支拉取最新的代码，并将其合并到本地`dev`分支。
+
+### 方案二：先同步远程分支和再本地分支
+
+`git fetch`命令从远程仓库获取最新的代码和分支信息，但并不自动合并到本地分支。然后，我们可以使用`git merge`命令将远程分支合并到本地分支。
+
+首先，使用以下命令获取远程分支的最新代码和分支信息：
+
+```bash
+git fetch origin
+```
+
+然后，切换到要进行同步的本地分支：
+
+```bash
+git checkout dev
+```
+
+最后，使用以下命令将远程分支合并到本地分支：
+
+```bash
+git merge origin/dev
+```
+
+这将将`origin`远程仓库的`dev`分支合并到本地的`dev`分支。
