@@ -74,21 +74,23 @@ push）
 
 **采用ssh的方式**
 
-- 首先在本地配置个人信息（如果配置好，则省略）
+### 1. 在本地配置个人信息
 
-  ```
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-  ```
+（如果配置好，则省略）
 
-- 在本地生成[SSH](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+```
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
 
-  - 打开终端。
-  - 粘贴以下文本，将示例中使用的电子邮件替换为 GitHub 电子邮件地址
-  - `ssh-keygen -t ed25519 -C "your_email@example.com"`
-  - 直接按两个enter，设置为默认即可
-  - 最后得到了两个文件：id_rsa和id_rsa.pub
-  - 查看id_rsa.pub公钥：`cat ~/.ssh/id_rsa.pub`
+### 2. 在本地生成[SSH](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+- 打开终端。
+- 粘贴以下文本，将示例中使用的电子邮件替换为 GitHub 电子邮件地址
+- `ssh-keygen -t ed25519 -C "your_email@example.com"`
+- 直接按两个enter，设置为默认即可
+- 最后得到了两个文件：id_rsa和id_rsa.pub
+- 查看id_rsa.pub公钥：`cat ~/.ssh/id_rsa.pub`
 
 - 在github上，添加ssh秘钥
 
