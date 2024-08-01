@@ -1,6 +1,8 @@
 # 版本控制
 
-## 基本命令
+[TOC]
+
+## 一、基本命令
 
 ```
 # 初始化
@@ -17,7 +19,7 @@ git reflog
 git reset --hard 版本号
 ```
 
-## 分支
+## 二、分支
 
 ```
 # 查看分支
@@ -37,7 +39,7 @@ git branch -d 分支名称
 
 
 
-## 个人信息配置，只配置一次即可
+## 三、个人信息配置，只配置一次即可
 
 ```
 git config --global user.email "you@example.com"
@@ -46,9 +48,7 @@ git config --global user.name "Your Name"
 
 
 
-## 上传远程仓库
-
-
+## 四、上传远程仓库
 
 ```
 # 给远程仓库起别名
@@ -66,7 +66,7 @@ git checkout 分支
 
 
 
-## 使用git上传本地代码到github
+## 五、使用git上传本地代码到github
 
 （github自2021年，不再支持通过账户密码的方式进行git
 
